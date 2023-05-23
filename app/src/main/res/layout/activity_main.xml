@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.atm.MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/available_balance"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/Balance"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/Balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/balance"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/materialTextView"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lblDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/Darkkyellow"
+                android:text="@string/deposit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sp"
+                android:textStyle="bold"
+                android:onClick="depositBtn"
+                app:layout_constraintEnd_toStartOf="@+id/lblWithdraw"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lblWithdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_50dp"
+                android:backgroundTint="@color/Darkkyellow"
+                android:text="@string/withdraw"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sp"
+                android:textStyle="bold"
+                android:onClick="withdraw"
+                app:layout_constraintBottom_toBottomOf="@+id/lblDeposit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/lblDeposit"
+                app:layout_constraintTop_toTopOf="@+id/lblDeposit"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTwoThousend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="@string/twothousend"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/lblDeposit"
+                app:layout_constraintTop_toBottomOf="@+id/lblDeposit" />
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTwoThousendNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:text="@string/note"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTwoThousend"
+                app:layout_constraintEnd_toEndOf="@+id/lblDeposit"
+                app:layout_constraintStart_toEndOf="@+id/tvTwoThousend"
+                app:layout_constraintTop_toTopOf="@+id/tvTwoThousend"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvThousend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="@string/thousend"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tvTwoThousend"
+                app:layout_constraintTop_toBottomOf="@+id/tvTwoThousend" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvThousendNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:text="@string/note"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvThousend"
+                app:layout_constraintEnd_toEndOf="@+id/tvTwoThousendNotes"
+                app:layout_constraintStart_toEndOf="@+id/tvThousend"
+                app:layout_constraintTop_toTopOf="@+id/tvThousend"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFiveHundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:text="@string/fiveHundred"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTwoThousendNotes"
+                app:layout_constraintStart_toEndOf="@+id/tvTwoThousendNotes"
+                app:layout_constraintTop_toTopOf="@+id/tvTwoThousendNotes" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFiveHundredNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFiveHundred"
+                app:layout_constraintEnd_toEndOf="@+id/lblWithdraw"
+                app:layout_constraintHorizontal_bias="0.169"
+                app:layout_constraintStart_toEndOf="@+id/tvFiveHundred"
+                app:layout_constraintTop_toTopOf="@+id/tvFiveHundred"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFifty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:text="@string/fifty"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvThousendNotes"
+                app:layout_constraintStart_toEndOf="@+id/tvThousendNotes"
+                app:layout_constraintTop_toTopOf="@+id/tvThousendNotes" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFiftyNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFifty"
+                app:layout_constraintEnd_toEndOf="@+id/tvFiveHundredNotes"
+                app:layout_constraintStart_toEndOf="@+id/tvFifty"
+                app:layout_constraintTop_toTopOf="@+id/tvFifty" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/depositContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/historyDepositContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDeposit"
+                style="@style/CustomTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_amount_you_want_to_deposit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDeposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnterDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/Darkkyellow"
+                android:onClick="btnEnterDeposit"
+                android:text="@string/deposit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tilDeposit"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/tilDeposit"
+                app:layout_constraintTop_toBottomOf="@+id/tilDeposit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/WithDrawContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:padding="@dimen/_30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/historyWithdrawContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilWithDraw"
+                style="@style/CustomTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_amount_you_want_to_withdraw"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtWithDraw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnterWithDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/Darkkyellow"
+                android:onClick="btnEnterWithdraw"
+                android:text="@string/withdraw"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tilWithDraw"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/tilWithDraw"
+                app:layout_constraintTop_toBottomOf="@+id/tilWithDraw" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/historyDepositContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainContainer">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/deleteHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deleteHistory"
+                android:text="@string/deleteHistory"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="@dimen/_20dp"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDepposit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/deleteHistory"
+                app:layout_constraintEnd_toEndOf="@id/deleteHistory"
+                app:layout_constraintStart_toStartOf="@id/deleteHistory"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/historyWithdrawContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewWithdraw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

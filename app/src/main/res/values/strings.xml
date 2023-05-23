@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AtmDemo</string>
+    <string name="available_balance">Available Balance:</string>
+    <string name="balance">0</string>
+    <string name="deposit">Diposit</string>
+    <string name="withdraw">WithDraw</string>
+    <string name="enter_amount_you_want_to_withdraw">Enter amount you want to withdraw</string>
+    <string name="enter_amount_you_want_to_deposit">Enter amount you want to deposit</string>
+    <string name="twothousend">2000</string>
+    <string name="note">  Notes</string>
+    <string name="thousend">100 </string>
+    <string name="fiveHundred">500</string>
+    <string name="fifty">50   </string>
+    <string name="history">History</string>
+    <string name="titleWithdraw">Withdraw</string>
+    <string name="money">Money</string>
+    <string name="deleteHistory">DeleteHistory</string>
+</resources>
