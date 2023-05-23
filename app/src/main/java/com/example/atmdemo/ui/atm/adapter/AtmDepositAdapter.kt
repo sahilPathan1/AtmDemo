@@ -1,6 +1,7 @@
 package com.example.atmdemo.ui.atm.adapter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -21,12 +22,12 @@ class AtmDepositAdapter(private var itemList: List<DepositModel>) : RecyclerView
         @SuppressLint("SetTextI18n")
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.binding.tvDepositMoeny.text = " ₹  ${itemList[position].Money}"
+            Log.d("Tag","jjfhudfhg")
         }
 
         override fun getItemCount(): Int {
             return itemList.size
         }
-
         inner class ViewHolder(var binding: ItemDepositListBinding) : RecyclerView.ViewHolder(binding.root) {}
     }
 
